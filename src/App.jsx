@@ -13,6 +13,7 @@ import About from './pages/About/About';
 import Matcher from './pages/Matcher/Matcher';
 import Login from './pages/Login/Login';
 import ProtectedRoute from './components/Common/ProtectedRoutes/ProtectedRoute';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <Analytics />
       <Routes>
         <Route path='/' element={<ProtectedRoute><Homepage /></ProtectedRoute>} />
         <Route path='*' element={<h1>404</h1>} />
